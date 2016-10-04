@@ -9,7 +9,6 @@ namespace cis237inclass3
     class SalaryEmployee : Employee
     {
         private decimal _weeklySalary;
-        private const decimal  _weeksInYear = 52;
 
         public decimal WeeklySalary
         {
@@ -40,7 +39,7 @@ namespace cis237inclass3
         public override decimal GetYearlySalary()
         {
             //throw new NotImplementedException();
-            return this._weeklySalary * _weeksInYear;
+            return this._weeklySalary * Employee._weeksInYear;
         }
 
         // constructor

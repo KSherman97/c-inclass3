@@ -14,6 +14,7 @@ namespace cis237inclass3
         protected string _firstName;
         protected string _lastName;
         protected DateTime _startDate;
+        protected const decimal _weeksInYear = 52;
 
         // properties
         public string FirstName
