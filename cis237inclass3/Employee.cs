@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace cis237inclass3
 {
-    class Employee
+    // make this class abstract. This way it can't be instantiated, but
+    // it will server as a good base for derived classes
+    abstract class Employee
     {
         // variables / Backing fields
         protected string _firstName;
@@ -43,10 +45,15 @@ namespace cis237inclass3
             return new TimeSpan(DateTime.Now.Ticks - this._startDate.Ticks).Days / 365;
         }
 
-        public string GetAllEmployeeInformation()
+        public virtual string GetAllEmployeeInformation()
         {
             return this._firstName + " " + this._lastName + " " + this.GetEmploymentDurationInYears();
         }
+
+        // Get the yearly salary of the employee
+        // make the method abstract because we want the sub classes to implement it, but 
+        // at this level we don't know how to implement it
+        public abstract decimal GetYearlySalary();
 
         // Constructors
         public Employee(string FirstName, string LastName, DateTime StartDate)

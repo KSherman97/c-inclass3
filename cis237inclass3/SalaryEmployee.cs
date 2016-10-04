@@ -9,6 +9,7 @@ namespace cis237inclass3
     class SalaryEmployee : Employee
     {
         private decimal _weeklySalary;
+        private const decimal  _weeksInYear = 52;
 
         public decimal WeeklySalary
         {
@@ -27,6 +28,19 @@ namespace cis237inclass3
         {
             // take the parent ToString and add the weekly salary to it
             return base.ToString() + " " + this._weeklySalary;
+        }
+
+        public override string GetAllEmployeeInformation()
+        {
+            return base.GetAllEmployeeInformation() + " " + this._weeklySalary.ToString("c");
+        }
+
+        // override the abstract method in the Employee class. Because the mployee class declares
+        // the method as abstract, this class MUST implement it.
+        public override decimal GetYearlySalary()
+        {
+            //throw new NotImplementedException();
+            return this._weeklySalary * _weeksInYear;
         }
 
         // constructor
