@@ -8,7 +8,7 @@ namespace cis237inclass3
 {
     // make this class abstract. This way it can't be instantiated, but
     // it will server as a good base for derived classes
-    abstract class Employee
+    abstract class Employee : IEmployee
     {
         // variables / Backing fields
         protected string _firstName;
